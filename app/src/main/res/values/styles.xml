@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Keypad button style -->
+    <style name="KeypadButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="rippleColor">@android:color/darker_gray</item>
+    </style>
+
+    <!-- Highlighted keypad button style -->
+    <style name="KeypadButton.Highlighted">
+        <item name="android:background">@android:color/white</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <!-- Delete button style -->
+    <style name="KeypadButton.Delete">
+        <item name="android:background">@android:color/white</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="GreenSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">#C4FF4D</item>
+    </style>
+
+</resources>
+
+

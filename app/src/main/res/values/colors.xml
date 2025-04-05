@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--resources>
+
+    <!- Primary Colors >
+    <color name="primary_black">#FF000000</color>
+    <color name="primary_white">#FFFFFFFF</color>
+
+    <!- Neutral Grays >
+    <color name="gray_dark">#9B9B9B</color>
+    <color name="gray_middle">#D9D9D9</color>
+    <color name="gray_light">#ECECEC</color>
+    <color name="gray_extra_light">#E5E5E5</color>
+    <color name="gray_light_middle">#B8B8B8</color>
+    <color name="gray_nav_bar">#F8F8F8</color>
+    <color name="gray_dark_mode">#4B4B4B</color>
+    <color name="gray_shadow">#7A7A7A</color>
+    <color name="gray_font">#6C6C6C</color>
+
+    <!- Highlight Colors >
+    <color name="highlight_green_light">#BEF34C</color>
+    <color name="highlight_green_dark">#A7CD56</color>
+    <color name="highlight_green_shadow">#0DBE00</color>
+    <color name="highlight_pin_green">#91AF53</color>
+
+    <!- Error Colors ->
+    <color name="error_outline_red">#E69998</color>
+    <color name="error_red">#FF0000</color>
+
+    <!- Special Use Colors >
+    <color name="keypad_gray">#ECECEC</color>
+    <color name="keypad_green">#BEF34C</color>
+
+</resources-->
+
+
+    <resources>
+        <color name="black">#FF000000</color>
+        <color name="white">#FFFFFFFF</color>
+        <color name="dark_gray">#9B9B9B</color>
+        <color name="light_gray">#ECECEC</color>
+        <color name="middle_gray">#D9D9D9</color>
+        <color name="lightMiddle_gray">#B8B8B8</color>
+        <color name="extraLight_gray">#E5E5E5</color>
+        <color name="navBar_gray">#F8F8F8</color>
+        <color name="darkMode_gray">#4B4B4B</color>
+        <color name="shadow_gray">#7A7A7A</color>
+        <color name="font_gray">#6C6C6C</color>
+        <color name="lightHighlight_green">#BEF34C</color>
+        <color name="darkHighlight_green">#A7CD56</color>
+        <color name="shadow_green">#0DBE00</color>
+        <color name="outline_red">#E69998</color>
+        <color name="error_red">#FF0000</color>
+        <color name="pin_green">#91AF53</color>
+        <color name="keypadGray">#ECECEC</color>
+        <color name="keypadGreen">#BEF34C</color>
+
+
+        <color name="custom_primary">#FF5722</color>
+        <color name="custom_primary_variant">#E64A19</color>
+        <color name="custom_surface">#F5F5F5</color>
+        <color name="light_primary">#6200EE</color>
+        <color name="dark_primary">#BB86FC</color>
+
+    </resources>

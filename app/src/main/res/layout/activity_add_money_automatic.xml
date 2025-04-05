@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/woodie">
+
+    <!-- Header with Back Button and Title -->
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:src="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Add money"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ivBack"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+    <!-- Toggle Buttons -->
+    <LinearLayout
+        android:id="@+id/toggleButtonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <Button
+            android:id="@+id/btnOneTime"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_button_left_bg"
+            android:text="One time"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnAutomatic"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_button_right_bg_selected"
+            android:text="Automatic"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <!-- Amount Section -->
+    <TextView
+        android:id="@+id/tvAmountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Amount"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toggleButtonsContainer" />
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 00.00"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmountLabel" />
+
+    <!-- Balance Cards -->
+    <LinearLayout
+        android:id="@+id/balanceCardsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBankBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/light_gray">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bank balance"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvBankBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 10 200.00"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCardBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/light_gray">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Card balance"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvCardBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 3 690.00"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- Monthly Payment Amount -->
+    <TextView
+        android:id="@+id/tvMonthlyPaymentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Monthly payment amount"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balanceCardsContainer" />
+
+    <TextView
+        android:id="@+id/tvMonthlyDropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Monthly"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:drawableEnd="@drawable/drpdown"
+        android:drawablePadding="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvMonthlyPaymentLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvMonthlyPaymentLabel" />
+
+    <EditText
+        android:id="@+id/etMonthlyAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="$ 00.00"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvMonthlyPaymentLabel" />
+
+    <!-- Monthly Payment History -->
+    <TextView
+        android:id="@+id/tvMonthlyPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Monthly Payment"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etMonthlyAmount" />
+
+    <TextView
+        android:id="@+id/tvSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="See all"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvMonthlyPaymentTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvMonthlyPaymentTitle" />
+
+    <!-- Payment History Items -->
+    <LinearLayout
+        android:id="@+id/paymentHistoryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvMonthlyPaymentTitle">
+
+        <!-- Payment Item 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="March 03, 2024"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Automatic"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 2500.00"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Payment Item 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="February 03, 2024"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Automatic"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 2500.00"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Payment Item 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="March 03, 2024"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Automatic"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 2500.00"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+    </LinearLayout>
+
+    <!-- From Section -->
+    <TextView
+        android:id="@+id/tvFromLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="From"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/paymentHistoryContainer" />
+
+    <LinearLayout
+        android:id="@+id/fromCardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvFromLabel">
+
+        <ImageView
+            android:id="@+id/ivCardLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/green_square_background"
+            android:padding="8dp"
+            android:src="@drawable/greencardlogo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wallet green card account"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="**** 2629"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvChange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Add Money Button -->
+    <Button
+        android:id="@+id/btnAddMoney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/black_button_background"
+        android:text="Add money"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/fromCardContainer" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

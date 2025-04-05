@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/homelighe"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_card"
+        android:icon="@drawable/cardlight"
+        android:title="Card" />
+    <item
+        android:id="@+id/navigation_transfer"
+        android:icon="@drawable/transfer"
+        android:title="Transfer" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profilelight"
+        android:title="Profile" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settinglight"
+        android:title="Setting" />
+</menu>

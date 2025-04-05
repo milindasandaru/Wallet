@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/woodie"
+    tools:context=".ui.profile.Profile">
+
+    <!-- Header with back button and title -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:src="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Profile"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack" />
+
+    <!-- Profile Avatar with Edit Icon -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivEditAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/circle_background"
+        android:padding="6dp"
+        android:src="@drawable/editicon"
+        app:layout_constraintBottom_toBottomOf="@+id/cardAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/cardAvatar"
+        app:tint="@color/white" />
+
+    <!-- Personal Information Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPersonalInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardAvatar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvPersonalInfoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEditPersonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Name -->
+            <ImageView
+                android:id="@+id/ivName"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/personicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPersonalInfoTitle" />
+
+            <TextView
+                android:id="@+id/tvNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Name"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivName"
+                app:layout_constraintTop_toTopOf="@+id/ivName" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Milinda Sandaruwan"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivName"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameLabel" />
+
+            <!-- Email -->
+            <ImageView
+                android:id="@+id/ivEmail"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/emailicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <TextView
+                android:id="@+id/tvEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Email"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivEmail"
+                app:layout_constraintTop_toTopOf="@+id/ivEmail" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="sams.senarath@gmail.com"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivEmail"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmailLabel" />
+
+            <!-- Date of Birth -->
+            <ImageView
+                android:id="@+id/ivDob"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/calendaricon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+            <TextView
+                android:id="@+id/tvDobLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Date of Birth"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivDob"
+                app:layout_constraintTop_toTopOf="@+id/ivDob" />
+
+            <TextView
+                android:id="@+id/tvDob"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="21 / 03/ 2001"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDob"
+                app:layout_constraintTop_toBottomOf="@+id/tvDobLabel" />
+
+            <!-- Phone Number -->
+            <ImageView
+                android:id="@+id/ivPhone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/phoneicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDob" />
+
+            <TextView
+                android:id="@+id/tvPhoneLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Phone number"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivPhone"
+                app:layout_constraintTop_toTopOf="@+id/ivPhone" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="+ 94 76 874 8754"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPhone"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhoneLabel" />
+
+            <!-- Address -->
+            <ImageView
+                android:id="@+id/ivAddress"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/locationicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+            <TextView
+                android:id="@+id/tvAddressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Address"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivAddress"
+                app:layout_constraintTop_toTopOf="@+id/ivAddress" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="333 / 33 Hortan place, Colombo"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAddress"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddressLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bank Information Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBankInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPersonalInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvBankInfoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank Information"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEditBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Branch -->
+            <ImageView
+                android:id="@+id/ivBranch"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/bankicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBankInfoTitle" />
+
+            <TextView
+                android:id="@+id/tvBranchLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Branch"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivBranch"
+                app:layout_constraintTop_toTopOf="@+id/ivBranch" />
+
+            <TextView
+                android:id="@+id/tvBranch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Colombo"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivBranch"
+                app:layout_constraintTop_toBottomOf="@+id/tvBranchLabel" />
+
+            <!-- Bank Number -->
+            <ImageView
+                android:id="@+id/ivBankNumber"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/dollaricon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBranch" />
+
+            <TextView
+                android:id="@+id/tvBankNumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Bank number"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivBankNumber"
+                app:layout_constraintTop_toTopOf="@+id/ivBankNumber" />
+
+            <TextView
+                android:id="@+id/tvBankNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="2356 3664 6565 6565"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivBankNumber"
+                app:layout_constraintTop_toBottomOf="@+id/tvBankNumberLabel" />
+
+            <!-- Account Type (New) -->
+            <ImageView
+                android:id="@+id/ivAccountType"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/accounttypeicon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBankNumber" />
+
+            <TextView
+                android:id="@+id/tvAccountTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Account Type"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivAccountType"
+                app:layout_constraintTop_toTopOf="@+id/ivAccountType" />
+
+            <TextView
+                android:id="@+id/tvAccountType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Savings Account"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAccountType"
+                app:layout_constraintTop_toBottomOf="@+id/tvAccountTypeLabel" />
+
+            <!-- Swift Code (New) -->
+            <ImageView
+                android:id="@+id/ivSwiftCode"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/swifticon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAccountType" />
+
+            <TextView
+                android:id="@+id/tvSwiftCodeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Swift Code"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/ivSwiftCode"
+                app:layout_constraintTop_toTopOf="@+id/ivSwiftCode" />
+
+            <TextView
+                android:id="@+id/tvSwiftCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="BOFAUS3N"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivSwiftCode"
+                app:layout_constraintTop_toBottomOf="@+id/tvSwiftCodeLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/woodie">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:src="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Question Button -->
+    <ImageView
+        android:id="@+id/ivQuestion"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/questionicon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Verify OTP"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Enter the 4-digit code sent via sms to"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Phone Number -->
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="07* *** *77"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+    <!-- OTP Input Boxes -->
+    <LinearLayout
+        android:id="@+id/otpBoxesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber">
+
+        <TextView
+            android:id="@+id/tvOtp1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOtp2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOtp3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvOtp4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Resend Text -->
+    <LinearLayout
+        android:id="@+id/resendContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpBoxesContainer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive the OTP ? "
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend"
+            android:textColor="#C5FF65"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Timer Text -->
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="OTP expires in - 2:59"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resendContainer" />
+
+    <!-- Keypad -->
+    <GridLayout
+        android:id="@+id/keypadContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Row 1 -->
+        <TextView
+            android:id="@+id/tvKey1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Row 2 -->
+        <TextView
+            android:id="@+id/tvKey4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Row 3 -->
+        <TextView
+            android:id="@+id/tvKey7"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey8"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKey9"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#C5FF65"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Row 4 -->
+        <TextView
+            android:id="@+id/tvKeyOk"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="OK"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvKey0"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvKeyDelete"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp"
+            android:background="#F2F2F2"
+            android:gravity="center"
+            android:text="⌫"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </GridLayout>
+
+    <!-- Bottom Indicator -->
+    <View
+        android:id="@+id/bottomIndicator"
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

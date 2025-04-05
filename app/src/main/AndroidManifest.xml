@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Wallet"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.login.VerificationSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.PersonalInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.NeedHelpActivitySecond"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.NeedHelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.MobileNumberActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.Login_Activity_Page"
+            android:exported="false" />
+        <activity
+            android:name=".ui.addMoney.AddMoneyActivityAutomatic"
+            android:exported="false" />
+        <activity
+            android:name=".ui.addMoney.AddMoneyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.card.CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.Setting"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transfer.TransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.Home"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Add this line to declare LockScreenActivity -->
+        <activity
+            android:name=".ui.lockscreen.LockScreenActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/woodie">
+
+    <!-- Logo placeholder - Replace with your actual logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="292dp"
+        android:background="@drawable/circle_background"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Welcome back"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+    <TextView
+        android:id="@+id/tvEnterPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Enter pin"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+    <LinearLayout
+        android:id="@+id/pinDotsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterPin">
+
+        <View
+            android:id="@+id/pinDot1"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/pin_dot_active" />
+
+        <View
+            android:id="@+id/pinDot2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/pin_dot_inactive" />
+
+        <View
+            android:id="@+id/pinDot3"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/pin_dot_inactive" />
+
+        <View
+            android:id="@+id/pinDot4"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/pin_dot_inactive" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/keypadGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="50dp"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinDotsContainer">
+
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/btn1"
+            style="@style/KeypadButton"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/KeypadButton"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/KeypadButton"
+            android:text="3" />
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/btn4"
+            style="@style/KeypadButton"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/KeypadButton"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/KeypadButton"
+            android:text="6" />
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn7"
+            style="@style/KeypadButton"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/KeypadButton"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/KeypadButton"
+            android:text="9" />
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/btnOk"
+            style="@style/KeypadButton"
+            android:text="OK" />
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/KeypadButton"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/KeypadButton"
+            android:backgroundTint="@color/dark_gray"
+            android:text="×" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/tvForgetPin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Forget PIN ?"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/keypadGrid" />
+
+    <TextView
+        android:id="@+id/tvNoAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Don't have an account ?"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvForgetPin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

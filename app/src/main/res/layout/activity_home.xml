@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/woodie"
+    tools:context=".ui.home.Home">
+
+    <!-- Welcome Header -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:text="Good Morning, Sams"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Welcome to wallet"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
+
+    <ImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/bell"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvGreeting" />
+
+    <!-- Balance Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBalance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvBalanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your balance"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 3 690.00"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBalanceLabel" />
+
+            <ImageView
+                android:id="@+id/ivRefresh"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/open_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/tvBalance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvBalance" />
+
+            <Button
+                android:id="@+id/btnAddMoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_button_bg"
+                android:backgroundTint="#000000"
+                android:text="Add money"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Cards Section -->
+    <TextView
+        android:id="@+id/tvCardsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Your cards"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardBalance" />
+
+    <TextView
+        android:id="@+id/tvNewCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="+ New card"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCardsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCardsLabel" />
+
+    <!-- Card View (Simplified for prototype) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCardsLabel">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C4FF4D">
+
+            <TextView
+                android:id="@+id/tvCardAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="$ 2,313.27"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="2321 3455 2323 3435"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/tvCardHolder"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCardHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Sams Clifford"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_button_white_bg"
+                android:backgroundTint="@color/black"
+                android:text="Details"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Pagination Dots -->
+    <LinearLayout
+        android:id="@+id/layoutDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_margin="4dp"
+            android:background="#C4FF4D" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_margin="4dp"
+            android:background="#DDDDDD" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_margin="4dp"
+            android:background="#DDDDDD" />
+    </LinearLayout>
+
+    <!-- Transaction Section -->
+    <TextView
+        android:id="@+id/tvTransactionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Transaction"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDots" />
+
+    <TextView
+        android:id="@+id/tvSeeAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="see all"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTransactionLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTransactionLabel" />
+
+    <!-- Simplified Transaction List -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTransactions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#F5F5F5"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTransactionLabel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical">
+
+            <!-- Starbucks Transaction -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">  <!-- Add margin bottom -->
+
+                <ImageView
+                    android:id="@+id/ivStarbucks"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/starbuck"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvStarbucksName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Starbucks Coffee"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvStarbucksAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivStarbucks"
+                    app:layout_constraintTop_toTopOf="@+id/ivStarbucks" />
+
+                <TextView
+                    android:id="@+id/tvStarbucksDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="March 05, 09:00 AM"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvStarbucksAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivStarbucks"
+                    app:layout_constraintTop_toBottomOf="@+id/tvStarbucksName" />
+
+                <TextView
+                    android:id="@+id/tvStarbucksAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-$ 26.38"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Walmart Transaction -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">  <!-- Add margin bottom -->
+
+                <ImageView
+                    android:id="@+id/ivwallmart"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/wallmart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvwallmartName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Wallmart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvwallmartAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivwallmart"
+                    app:layout_constraintTop_toTopOf="@+id/ivwallmart" />
+
+                <TextView
+                    android:id="@+id/tvwallmartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="March 05, 09:00 AM"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvwallmartAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivwallmart"
+                    app:layout_constraintTop_toBottomOf="@+id/tvwallmartName" />
+
+                <TextView
+                    android:id="@+id/tvwallmartAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-$ 26.38"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Amazon Transaction -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                tools:layout_editor_absoluteY="176dp">
+
+                <ImageView
+                    android:id="@+id/ivAmazon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/amazon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAmazonName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Amazon"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvAmazonAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivAmazon"
+                    app:layout_constraintTop_toTopOf="@+id/ivAmazon" />
+
+                <TextView
+                    android:id="@+id/tvAmazonDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="March 05, 09:00 AM"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvAmazonAmount"
+                    app:layout_constraintStart_toEndOf="@+id/ivAmazon"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAmazonName" />
+
+                <TextView
+                    android:id="@+id/tvAmazonAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-$ 26.38"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <!--?xml version="1.0" encoding="utf-8"?>
+                <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/woodie"
+                    tools:context=".MainActivity">
+
+
+                    <TextView
+                        android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Good Morning, Sams"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvWelcome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Welcome to wallet"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
+
+
+                    <ImageView
+                        android:id="@+id/ivNotification"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvGreeting"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvWelcome"
+                        android:contentDescription="Notifications"
+                        android:src="@drawable/bell" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardBalance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardBackgroundColor="#F5F5F5"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/tvBalanceLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Your balance"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tvBalance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$ 3 690.00"
+                                android:textColor="@color/black"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvBalanceLabel" />
+
+
+                            <ImageView
+                                android:id="@+id/ivRefresh"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tvBalance"
+                                app:layout_constraintBottom_toBottomOf="@+id/tvBalance"
+                                android:contentDescription="Refresh"
+                                android:src="@drawable/close_eye" />
+
+                            <Button
+                                android:id="@+id/btnAddMoney"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:background="@drawable/rounded_button_bg"
+                                android:text="Add money"
+                                android:textColor="@color/white"
+                                android:backgroundTint="@color/black"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvBalance" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tvCardsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Your cards"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardBalance" />
+
+                    <TextView
+                        android:id="@+id/tvNewCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="+ New card"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvCardsLabel"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvCardsLabel" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCards"
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="16dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCardsLabel"
+                        tools:listitem="@layout/item_card" />
+
+
+                    <LinearLayout
+                        android:id="@+id/layoutDots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvCards">
+
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/dot_selected" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/dot_unselected" />
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/dot_unselected" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvTransactionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Transaction"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutDots" />
+
+                    <TextView
+                        android:id="@+id/tvSeeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="see all"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvTransactionLabel"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvTransactionLabel" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTransactions"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTransactionLabel"
+                        tools:listitem="@layout/item_transaction" />
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/bottomNavigation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:menu="@menu/bottom_nav_menu" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout-->
