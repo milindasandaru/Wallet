@@ -1,72 +1,84 @@
-# BANKIO – Simplify Banking, Empower Finance
+# WALLET – Your All-in-One Online Banking Experience
 
 <div align="center">
-  <img src="app/src/main/res/drawable/logo1.png" alt="BANKIO App Logo" width="120" />
-  <h3>Your smart and secure mobile banking solution</h3>
+  <img src="app/src/main/res/drawable/logo1.png" alt="WALLET App Logo" width="120" />
+  <h3>Smart Banking. Simplified.</h3>
 </div>
 
 ---
 
 ## Description
 
-**BANKIO** is an intuitive and secure online banking mobile application designed to give users full control over their financial life. Whether you're sending money, checking balances, or reviewing your transaction history, BANKIO ensures seamless and secure banking at your fingertips.
+**WALLET** is an online banking mobile application designed to help users seamlessly manage their digital finances. It offers real-time access to account balances, transactions, and spending analytics—all from the convenience of your smartphone. With a secure, clean, and responsive interface, WALLET turns everyday banking into a smarter, safer, and faster experience.
 
-- Real-time balance updates and transaction tracking  
-- Secure login and encrypted data storage  
-- Smart tools for better financial control  
+Key highlights include:
+
+- Real-time balance tracking and transaction history  
+- Digital wallet with income/expense breakdown  
+- Secure local data handling with optional backup features  
+- Smart insights to help users manage spending habits
 
 ---
 
 ## Key Features
 
-### 1. Account Management
-- View all bank accounts in one place
-- Check real-time balances
-- Add and manage personal account details securely
+### 1. Multi-Account Support
+- Track multiple bank accounts or digital wallets.
+- View current balance, transaction logs, and account summaries.
 
-### 2. Fund Transfers
-- Transfer funds between your accounts or to others
-- Add beneficiaries with secure OTP validation
-- Track transfer history
+### 2. Instant Transfers & Transactions
+- Add simulated transactions to mimic deposits or expenses.
+- Categorize every transaction (Shopping, Utilities, Travel, etc.).
+- Include custom titles, amounts, dates, and account types.
 
-### 3. Transaction History & Filtering
-- View detailed transaction logs
-- Filter by date, category, or transaction type
-- Export history for records
+### 3. Smart Spending Analytics
+- Visual dashboards (charts, graphs) of account activity.
+- Daily, weekly, and monthly financial summaries.
 
-### 4. Bill Payments
-- Pay utility, mobile, and internet bills directly
-- Set recurring bill payments
-- Receive due-date reminders
+### 4. Budgeting Tools
+- Set spending limits for specific categories or accounts.
+- Alerts when budgets are exceeded or nearing limits.
 
-### 5. Smart Notifications
-- Get notified for deposits, withdrawals, and payment dues
-- Alerts for suspicious activities or login attempts
+### 5. Secure Data Handling
+- Data stored securely using `SharedPreferences`.
+- Transaction history is retained across sessions.
 
-### 6. Security & Data Protection
-- Biometric authentication (fingerprint/face ID)
-- Secure session handling and encrypted data
-- Local storage using `SharedPreferences` for app preferences
+### 6. Backup & Restore Options
+- Export and import transaction data (JSON/text).
+- Safe recovery via internal storage when needed.
 
----
-
-## How BANKIO Works
-
-1. **Sign in securely**: Use credentials or biometrics to log in.
-2. **Manage your accounts**: Add and view accounts and balances.
-3. **Send and receive money**: Transfer funds quickly and safely.
-4. **Track all transactions**: Stay updated on your spending.
-5. **Pay bills**: Handle recurring and one-time payments.
-6. **Stay notified**: Receive real-time alerts and updates.
+### 7. Notifications & Alerts
+- Daily reminders for logging activity.
+- Budget alerts and security reminders.
 
 ---
 
-## Why Choose BANKIO?
+## How WALLET Works
 
-- **Modern & Minimal UI** – User-friendly design for smooth banking
-- **Highly Secure** – Prioritized data safety and encrypted sessions
-- **All-in-One Banking** – Handle accounts, transfers, and payments
-- **Offline Data Access** – Access recent data without internet
+1. **Create Your Account Dashboard**  
+   Set up wallets or bank accounts with opening balances.
+
+2. **Add Income & Expenses**  
+   Log transactions, categorize them, and monitor your digital wallet activity.
+
+3. **Visualize Spending Trends**  
+   Use insights to understand your habits and cut down unnecessary expenses.
+
+4. **Stay Secure & Backed Up**  
+   Export and restore your banking data anytime.
+
+5. **Control Your Finances, Your Way**  
+   Personalized budgets and intuitive management, all in one app.
+
+---
+
+## Why Choose WALLET?
+
+- **All-in-One Banking** – Track all your accounts in a single view.  
+- **Secure by Design** – Local data handling with optional export/import.  
+- **Insight-Driven** – Visual analytics for smarter spending decisions.  
+- **Offline-Friendly** – Works without internet, perfect for quick local logs.  
+- **Minimalist UI** – Clean, fast, and user-friendly.
 
 ---
 
@@ -82,5 +94,6 @@
 ## Installation & Usage
 
 1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/your-username/bankio.git
+
+```bash
+git clone https://github.com/your-username/wallet.git
