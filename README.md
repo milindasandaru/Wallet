@@ -1,7 +1,7 @@
 # WALLET – Your All-in-One Online Banking Experience
 
 <div align="center">
-  <img src="app/src/main/res/drawable/logo1.png" alt="WALLET App Logo" width="120" />
+  <!--img src="app/src/main/res/drawable/logo1.png" alt="WALLET App Logo" width="120" /-->
   <h3>Smart Banking. Simplified.</h3>
 </div>
 
